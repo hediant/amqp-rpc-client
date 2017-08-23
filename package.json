@@ -23,6 +23,7 @@
   "homepage": "https://github.com/hediant/amqp-rpc-client#readme",
   "dependencies": {
     "amqplib": "^0.4.2",
-    "co": "^4.6.0"
+    "co": "^4.6.0",
+    "node-uuid": "^1.4.8"
   }
 }
