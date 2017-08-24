@@ -23,16 +23,21 @@ function AmqpRpcClient(url, rpc_queue){
                 if (err)
                     return reject(err);
                 conn.createChannel(function (err, ch){
-                    if (err)
+                    if (err){
+                        conn.close();
                         return reject(err);
+                    }
                     ch.assertQueue('', {exclusive:true}, function (err, q){
-                        if (err)
+                        if (err){
+                            conn.close();
                             return reject(err);
+                        }
                         var corr = uuid();
                         var is_timeout = false;
                         // set timeout
                         setTimeout(function (){
                             is_timeout = true;
+                            conn.close();
                             reject(Error("Timeout"));
                         }, timeout);
                         // handle result
