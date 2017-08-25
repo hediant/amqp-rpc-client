@@ -1,6 +1,6 @@
 {
   "name": "amqp-rpc-client",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "rpc client module with amqp",
   "main": "index.js",
   "scripts": {

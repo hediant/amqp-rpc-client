@@ -54,7 +54,8 @@ function AmqpRpcClient(url, rpc_queue){
                             new Buffer(msg),
                             {
                                 correlationId: corr,
-                                replyTo: q.queue
+                                replyTo: q.queue,
+                                persistent: false
                             }
                         );
                     })
