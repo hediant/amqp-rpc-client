@@ -3,7 +3,7 @@ var uuid = require('node-uuid');
 
 /*
     Request RPC call through amqp message queue
-    @url - amqp url string, e.g. amqp://localhost
+    @url - amqp url string, e.g. amqp://localhost or amqp://guest:guest@localhost:5672 etc.
     @rpc_queue - string, queue name that rpc server consume at
 */
 function AmqpRpcClient(url, rpc_queue){
